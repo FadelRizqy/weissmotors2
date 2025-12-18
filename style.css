@@ -1,0 +1,276 @@
+/* General Styling */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+    color: #f39c12;
+    border-bottom-color: #f39c12;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 1000px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 20s infinite;
+}
+
+.fade { animation-name: fade; animation-duration: 1.5s; }
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+@keyframes zoom { 0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);} }
+
+.slide-caption {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-left: 5px solid #f39c12;
+}
+
+.fade-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.9) 100%);
+    pointer-events: none;
+}
+
+/* Page Header */
+.page-header {
+    padding: 120px 0 60px 0;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/car2.jpg') no-repeat center center/cover;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Car Collection */
+#collection {
+    padding: 4rem 0;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.car-card {
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.car-image-wrapper {
+    position: relative;
+    height: 220px;
+}
+
+.car-image-wrapper::before, .car-image-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+.car-image-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, #1f1f1f, transparent);
+}
+
+.car-image-wrapper::after {
+    bottom: 0;
+    background: linear-gradient(to top, #1f1f1f, transparent);
+}
+
+.car-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.btn-details {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #f39c12;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-details:hover {
+    background-color: #e67e22;
+}
+
+/* Content Section */
+.content-section {
+    padding: 120px 0 60px 0;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* =========================== */
+/*     Tambahan Style Baru     */
+/* =========================== */
+
+.intro-section {
+    padding: 120px 0 60px 0;
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+}
+
+.intro-section p {
+    max-width: 800px;
+    margin: auto;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.benefits-section {
+    padding: 60px 0;
+    background-color: #1a1a1a;
+}
+
+.benefits-section h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #f39c12;
+    margin-bottom: 2rem;
+}
+
+.benefits-section ul {
+    max-width: 700px;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-section li {
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #333;
+    color: #ddd;
+}
+
+.benefits-section li:last-child {
+    border-bottom: none;
+}
+/* SEARCH BAR */
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    background-color: #1c1c1c;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #f39c12;
+}
